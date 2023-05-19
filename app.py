@@ -36,7 +36,7 @@ def api():
 async def main(user_input):
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     kukey = os.path.join(SITE_ROOT, "static", "cookies.json")
-    bot = Chatbot(cookie_path=kukey)
+    bot = Chatbot.create()
     response = await bot.ask(prompt=user_input, conversation_style=ConversationStyle.precise)
 
     for message1 in response["item"]["messages"]:
