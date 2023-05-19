@@ -36,9 +36,9 @@ def api():
 async def main(user_input):
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     kukey = os.path.join(SITE_ROOT, "static", "cookies.json")
-    bot = Chatbot.create()
+    bot = await Chatbot.create()
     response = await bot.ask(prompt=user_input, conversation_style=ConversationStyle.precise)
-
+    await bot.close()
     for message1 in response["item"]["messages"]:
         if message1["author"] == "bot":
             bot_response = message1["text"]
