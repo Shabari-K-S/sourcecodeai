@@ -13,7 +13,7 @@
 	position: absolute;
 	right: 0;
 	width: 100%;
-	min-height: 94vh;
+	min-height: 100vh;
 	padding: 100px;
 	display: flex;
 	justify-content: space-between;
@@ -253,6 +253,9 @@
 	}
 	.text > h4{
 		font-size: 1.2rem;
+	}
+	.showcase{
+		min-height:94vh;
 	}
 }
 
