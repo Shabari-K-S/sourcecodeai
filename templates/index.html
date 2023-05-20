@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+    <link rel="icon" href="{{url_for('static', filename='%PUBLIC_URL%/img/logo.png')}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+	<title>program files</title>
+</head>
+<body>
+	<section class="showcase">
+		<header>
+			<h2 class="logo"><img src="{{url_for('static', filename='img/logo.png')}}" alt="" srcset="">Source Code</h2>
+			<div class="toggle"></div>
+		</header>
+		<video src="{{url_for('static', filename='background.mp4')}}" muted loop autoplay></video>
+
+		<div class="overlay"></div>
+		<div class="text">
+			<h2>An AI Powered Chatbot Integreted with Bing</h2>
+			<h4>by Shabari</h4>
+			<!--<img src="http://www.hackthebox.eu/badge/image/1104708" alt="Hack The Box">-->
+			<ul><li><a href="https://sourcecodeai-client.vercel.app/">Try Source Code Ai</a></li></ul>
+		</div>
+		<ul class="social">
+			<li><a href="#"><img src="{{url_for('static', filename='img/facebook.png')}}"></a></li>
+			<li><a href="#"><img src="{{url_for('static', filename='img/twitter.png')}}"></a></li>
+			<li><a href="#"><img src="{{url_for('static', filename='img/linkedin.png')}}"></a></li>
+		</ul>
+	</section>
+	<div class="menu">
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="#">News</a></li>
+		<li><a href="#">Contacts</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Sign In</a></li>
+	</ul>
+	</div>
+	<script type="text/javascript">
+		const menuToggle = document.querySelector('.toggle');
+		const showcase = document.querySelector('.showcase');
+		menuToggle.addEventListener('click',() => {
+			menuToggle.classList.toggle('active');
+			showcase.classList.toggle('active');
+		})
+	</script>
+</body>
+</html>
