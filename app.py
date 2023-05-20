@@ -5,6 +5,7 @@ import re
 from EdgeGPT import Chatbot, ConversationStyle
 import os
 import traceback
+import random
 
 
 app = Flask(__name__)
@@ -23,6 +24,10 @@ def api():
     try:
         if user_input:
             user_input = request.json['user_input']
+            user_input_like = ['who are you','what are you','what is your name','what are your','what is your','what is you','who is you','who is your','who are your']
+            response_like = ["I am Source Code, a chatbot created by Shabari and Integrated with Bing. I am here to help you with your queries.","I am Source Code. I am here to help you with your queries.","My name is Source Code. I am here to help you with your queries.","I am Source Code, a chatbot created by Shabari and Integrated with Bing. I am here to help you with your queries.","I am Source Code. I am here to help you with your queries.","My name is Source Code. I am here to help you with your queries.","I am a Chatbot created by Shabari. I am here to help you with your queries.","I am a Chatbot created by Shabari. I am here to help you with your queries.","I am a Chatbot named SourceCode. I am here to help you with your queries.","I am a Chatbot created by Shabari. I am here to help you with your queries.","I am a Chatbot created by Shabari. I am here to help you with your queries.","I am a Chatbot created by Shabari. I am here to help you with your queries.","I am a Chatbot created by Shabari. I am here to help you with your queries.","I am a Chatbot created by Shabari. I am here to help you with your queries."]
+            if user_input in user_input_like:
+                return {"response": random.choice(response_like)}
             print(user_input)
             return asyncio.run(main(user_input))
         else:
