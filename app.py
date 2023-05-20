@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from flask_cors import CORS
 import asyncio
 import re
@@ -12,7 +12,7 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return "<h1>This is a Not a Working website</h1>"
+    return render_template('index.html')
 
 @app.route('/api', methods=['POST','GET'])
 def api():
@@ -34,8 +34,6 @@ def api():
 
 
 async def main(user_input):
-    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-    kukey = os.path.join(SITE_ROOT, "static", "cookies.json")
     bot = await Chatbot.create()
     response = await bot.ask(prompt=user_input, conversation_style=ConversationStyle.precise)
     await bot.close()
